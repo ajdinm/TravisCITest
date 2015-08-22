@@ -1,8 +1,5 @@
 os: linux
 
-# we use the R VM because it contains LaTeX and pandoc
-language: r
-
 # we need super user privileges, so we depend on the old travis-ci infrastructure
 sudo: required
 
@@ -15,6 +12,7 @@ script:
 - pdflatex -interaction=nonstopmode testFile.tex
 - pdf2djvu -d 1200 -o testFile.djvu testFile.pdf
 after_success:
+
 deploy:
 provider: releases
 user: "ajdinm"
