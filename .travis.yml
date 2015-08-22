@@ -17,7 +17,6 @@ user: "ajdinm"
 password: "AjdiN13lol"
 file: 
 - testFile.pdf
-- testFile.djvu
 skip_cleanup: true
 on: 
 repo: ajdinm/TravisCITest
