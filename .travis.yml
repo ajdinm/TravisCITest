@@ -14,14 +14,14 @@ apt_packages:
 - pdflatex -interaction=nonstopmode testFile.tex
 - pdf2djvu -d 1200 -o testFile.djvu testFile.pdf
 
-
+after_success:
 deploy:
-	provider: releases
-	user: "ajdinm"
-	password: "AjdiN13lol"
-	file: 
-		- testFile.pdf
-		- testFile.djvu
-	skip_cleanup: true
-	on: 
-		repo: ajdinm/TravisCITest
+provider: releases
+user: "ajdinm"
+password: "AjdiN13lol"
+file: 
+- testFile.pdf
+- testFile.djvu
+skip_cleanup: true
+on: 
+repo: ajdinm/TravisCITest
