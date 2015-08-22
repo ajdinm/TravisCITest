@@ -8,8 +8,6 @@ install:
 - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended pdf2djvu
 script:
 - pdflatex -interaction=nonstopmode testFile.tex 
-after_success:
-
 deploy:
 
 provider: releases
