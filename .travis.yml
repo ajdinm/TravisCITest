@@ -1,5 +1,27 @@
+os: linux
+
+# we use the R VM because it contains LaTeX and pandoc
+language: r
+
+# we need super user privileges, so we depend on the old travis-ci infrastructure
 sudo: required
 
-language: cpp
-compiler: gcc
-script: bash script.sh
+# we can install additional software
+apt_packages:
+# we download pdf2djvu to also generate a djvu file of our LaTeX source
+- pdf2djvu
+
+- pdflatex -interaction=nonstopmode testFile.tex
+- pdf2djvu -d 1200 -o testFile.djvu testFile.pdf
+
+after_success:
+deploy:
+	provider: releases
+	user: "ajdinm"
+	password: "AjdiN13lol"
+	file: 
+		- testFile.pdf
+		- testFile.djvu
+	skip_cleanup: true
+	on: 
+		repo: ajdinm/TravisCITest
