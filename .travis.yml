@@ -4,11 +4,9 @@ os: linux
 sudo: required
 
 # we can install additional software
-apt_packages:
-# we download pdf2djvu to also generate a djvu file of our LaTeX source
-- texlive-full
-- pdf2djvu
-
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install texlive-full
 script:
 - pdflatex testFile.tex 
 after_success:
