@@ -11,9 +11,9 @@ apt_packages:
 # we download pdf2djvu to also generate a djvu file of our LaTeX source
 - pdf2djvu
 
+script:
 - pdflatex -interaction=nonstopmode testFile.tex
 - pdf2djvu -d 1200 -o testFile.djvu testFile.pdf
-
 after_success:
 deploy:
 provider: releases
