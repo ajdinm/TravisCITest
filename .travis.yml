@@ -10,7 +10,7 @@ apt_packages:
 - pdf2djvu
 
 script:
-pdflatex testFile.tex 
+- pdflatex testFile.tex 
 after_success:
 
 deploy:
