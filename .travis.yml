@@ -7,6 +7,7 @@ sudo: required
 apt_packages:
 # we download pdf2djvu to also generate a djvu file of our LaTeX source
 - pdf2djvu
+- pdxlatex
 
 script:
 - pdflatex -interaction=nonstopmode testFile.tex
