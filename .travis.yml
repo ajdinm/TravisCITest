@@ -1,4 +1,5 @@
 sudo: required
 
 language: cpp
-script: ./script.sh
+compiler: gcc
+script: bash script.sh
